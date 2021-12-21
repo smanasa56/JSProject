@@ -8,79 +8,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>To-do List</title>
   </head>
   <body>
-   <!-- Button trigger modal -->
+    <div class="w3-display-topleft w3-padding-large w3-xlarge" style="font-weight: bold; margin-left: 17px;
+    margin-top: 13px;">
+     <img src="images/icon.png" alt="plan image" style="width: 31px; ">To-do List
+   </div>
+    
+    <h1 style="text-align:center;">Organize your task here</h1>
+    <br>
+    <div class="col text-center">
+    <button type="button" class="btn btn-danger" ><a href="task.html" style="color: black;"> Get started</a>
+    
+   </button>
+   
+   </div>
+   <img src="images/plan5.PNG" alt="background-image">
 
-
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-    Add task
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add task</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form  style="text-align: center;">
-                <div class="form-group">
-                  <label for="input">Name:</label>
-                  <input type="text" class="form-control" id="input" >
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Description:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <br>
-                <div class="form-group" >
-                    <label for="inputAsgn">AssignedTo:</label>
-                    <input type="text" class="form-control" id="inputAsgn" >
-                  </div>
-                  <br>
-                  <div class="form-group" >
-                    <label for="inputdate">DueDate:</label>
-                    <input type="text" class="form-control" id="inputdate" >
-                  </div>
-                  <br>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Status</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>ToDo</option>
-                    <option>In Progress </option>
-                    <option>Review</option>
-                    <option>Done</option>
-                  </select>
-                </div>
-                <br>
-                <!-- <div class="form-group">
-                  <label for="exampleFormControlSelect2">Example multiple select</label>
-                  <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div> -->
-                <button type="reset" class="btn btn-secondary" >Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-              </form> 
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-          <button type="button" class="btn btn-primary">Submit</button> -->
-        </div>
-      </div>
-    </div>
-  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

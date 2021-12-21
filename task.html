@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
     <title>Hello, world!</title>
   </head>
   <body>
@@ -33,6 +33,10 @@
 </head>
 <body> 
     <div class="col text-right">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
+            Add task
+          </button>
+
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalUpcoming">
         Upcoming
       </button>
@@ -107,14 +111,17 @@
     <br>
     <br>
 
-        <div class="row" id="middle"  >
-        <div class="card-columns" > 
+          <div class="row"  id="middle" >
+            <div class="card-columns">
           <div class="card bg-secondary">
             <div class="card-body text-center">
-              <p class="card-text">Identify requirements</p>
+              <p class="card-text">Identifying client Requirements</p>
             </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Task-1</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+                Task1
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -124,8 +131,9 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Task Name:</strong> Identifying Requirements</p>
-                        <p><strong>Task Description:</strong> Taking each requirement from the client and rechecking</p>
+                        <p><strong>Task Name:</strong>Identifying Requirements</p>
+                        <p><strong>Task Description:</strong> Taking each requirement from the client and rechecking
+                        </p>
                         <p><strong>Assigned To:</strong> Team1</p>
                         <p><strong>Start Date:</strong> 10/01/2022</p>
                         <p><strong>End Date:</strong> 12/01/2022</p>
@@ -144,13 +152,13 @@
           </div>
           <div class="card bg-warning">
             <div class="card-body text-center">
-              <p class="card-text">Working on User Interface </p>
+              <p class="card-text"> Working on User interface</p>
             </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
                 Task2
               </button>
               <!-- Modal -->
-              <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -160,12 +168,13 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Task Name:</strong> Working on UI</p>
-                        <p><strong>Task Description:</strong> Developing a user friendly webpage along with meeting requirements</p>
+                        <p><strong>Task Name:</strong> Working on User interface</p>
+                        <p><strong>Task Description:</strong>Developing a user friendly webpage along with meeting requirements
+                        </p>
                         <p><strong>Assigned To:</strong> Team2</p>
                         <p><strong>Start Date:</strong> 12/01/2022</p>
                         <p><strong>End Date:</strong> 04/02/2022</p>
-                        <p><strong>Status:</strong> InProgress</p>
+                        <p><strong>Status:</strong> Inprogress</p>
                     </div>
                     <div class="modal-footer">
                       <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
@@ -177,10 +186,10 @@
                   </div>
                 </div>
               </div>
-            
-          </div>
-          </div>
+          </div> 
         </div>
+        </div>
+    
           <div class="row"  id="middle" >
             <div class="card-columns">
           <div class="card bg-success">
@@ -323,7 +332,7 @@
         </div>
         <div class="modal-footer">
           <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleMod">
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
             Edit task
           </button>
           <button type="button" class="btn btn-primary">Delete Task</button>
@@ -335,15 +344,10 @@
         </div> 
         </div>
       </div>
-    </div>
+    
     <br>
     <div class="col text-right">
          <!-- Button trigger modal -->
-
-
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
-    Add task
-  </button>
  
   
   <!-- Modal -->
@@ -410,14 +414,14 @@
     </div>
   </div>
         </div>
-<br>
+
 
         <!-- Button trigger modal -->
 
-        <div class="col text-right">
+        <!-- <div class="col text-right">
 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModedit">
     Edit task
-  </button>
+  </button> -->
  
   
   <!-- Modal -->
@@ -484,7 +488,10 @@
     </div>
   </div>
         </div>
-    
+        <br>
+        <br>
+
+    <div class="col text-right" style="font-size: 23px; color:crimson; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">“Concentrate on doing the best possible work you can in the time allotted for the task.”</div>
     
 </body>
 </html>
