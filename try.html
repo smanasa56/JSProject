@@ -210,3 +210,67 @@ Task6
 
 <!-- id command -->
 // <div class="modal-content" ></div>
+
+
+
+
+////copy tasl.html////
+<div class="row"  id="middle" >
+  <div class="card-columns">
+<div class="card bg-danger">
+  <div class="card-body text-center">
+    <p class="card-text" >view your tasks list</p> 
+  </div>
+  <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+      Press here
+    </button>
+     <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Task Details</h5> -->
+            
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          </div>
+          <div class="modal-body" >
+              <ul class="list-group"  id="task-list" ></ul>
+          </div>
+          <!-- <div class="modal-footer">  -->
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModedit">
+              Edit task
+            </button>
+            <button type="button" class="btn btn-primary">Delete Task</button> -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+//////////taskmanager copy task
+
+`<div class="modal-content" >
+  <div class="modal-header" >
+    <h5 class="modal-title" id="exampleModalLabel">Task Details</h5>
+  </div>
+  
+              <div class="modal-body">
+                  <p data-task-id="${id}"></p>
+                  <p><strong>Task Name:</strong>${name}</p>
+                  <p><strong>Task Description:</strong>${description}</p>
+                  <p><strong>Assigned To:</strong> ${assignedTo}</p>
+                  <p><strong>Due Date:</strong> ${dueDate}</p>
+                  <p><strong>Status:</strong>${status}</p>
+              </div>
+              
+              <div class="modal-footer">
+           <button id="done-invisible" class="btn btn-outline-success done-button"="modal" >Done</button>
+          <button class="btn btn-outline-danger delete-button">Delete Task</button>
+        </div>
+  </div>`; 

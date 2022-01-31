@@ -120,33 +120,13 @@
       <div class="card-body text-center">
         <p class="card-text" >view your tasks list</p> 
       </div>
-      <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
-          Press here
-        </button>
-         <!-- Modal -->
-        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <!-- <h5 class="modal-title" id="exampleModalLabel">Task Details</h5> -->
-                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body" >
-                  <ul class="list-group"  id="task-list" ></ul>
-              </div>
-              <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModedit">
-                  Edit task
-                </button>
-                <button type="button" class="btn btn-primary">Delete Task</button> -->
-              </div>
-            </div>
-          </div>
+      <div class="task-list-container">
+        <h3 class="text-center">Tasks:</h3>
+        <div class="d-flex justify-content-center">
+          <ul class="list-group" id="task-list"></ul>
         </div>
+      </div>
+         
     </div>
    
   </div>
@@ -212,8 +192,8 @@
                   
                   <br>
                 <div class="form-group">
-                  <label for="input-choose">Status</label>
-                  <select class="form-control" id="input-choose" required>
+                  <label for="status">Status</label>
+                  <select class="form-control" id="status" name="status" required>
                     <option>ToDo</option>
                     <option>In Progress </option>
                     <option>Review</option>
@@ -231,9 +211,10 @@
                     <option>4</option>
                     <option>5</option>
                   </select>
+
                 </div> -->
                 <button type="reset" class="btn btn-secondary" >Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
               </form> 
         </div>
         <div class="modal-footer">
@@ -322,8 +303,8 @@
         <br>
 
     <div class="col text-right" style="font-size: 23px; color:crimson; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">“Concentrate on doing the best possible work you can in the time allotted for the task.”</div>
-    <script src="js/index.js"></script>  
-    <script src="js/taskManager.js"></script>
+    <script src="js/index.js" defer></script>  
+    <script src="js/taskManager.js" defer></script>
 </body>
 </html>
 

@@ -1,24 +1,29 @@
 const createTaskHtml = (  id, name, description, assignedTo, dueDate, status ) => {
     const html =   
-    `<div class="modal-content" >
-        <div class="modal-header" >
-          <h5 class="modal-title" id="exampleModalLabel">Task Details</h5>
+    `<li id="individual-card" class="card" data-task-id="${id}" style="min-width: 50vw">
+        <div class="card-body">
+            <h5 class="card-title">Name: ${name}</h5>
+            <p class="card-text">
+                Task Description: ${description}
+            </p>
+            <p class="card-text">Assigned To: ${assignedTo}</p>
+            <p class="card-text">Due Date: ${dueDate}</p>
+            <p class="card-text"><b>Task status: ${status}</b></p>
+            <div class="card-footer row mt-4">
+                <div class="col-6 justify-content-center">
+                    <button id="done-invisible" class="btn btn-outline-success done-button">
+                        Done
+                    </button>
+                </div>
+                <div class="col-6 justify-content-center">
+                    <button class="btn btn-outline-danger delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>
         </div>
-        
-                    <div class="modal-body">
-                        <p data-task-id="${id}"></p>
-                        <p><strong>Task Name:</strong>${name}</p>
-                        <p><strong>Task Description:</strong>${description}</p>
-                        <p><strong>Assigned To:</strong> ${assignedTo}</p>
-                        <p><strong>Due Date:</strong> ${dueDate}</p>
-                        <p><strong>Status:</strong>${status}</p>
-                    </div>
-                    
-                    <div class="modal-footer">
-                 <button type="button" id="done-invisible" class="btn btn-secondary  done-button" data-dismiss="modal" >Done</button>
-                <button type="button" class="btn btn-outline-danger delete-button">Delete Task</button>
-              </div>
-        </div>`; 
+    </li>
+    `;
           return html;
           
 };
@@ -26,10 +31,11 @@ const createTaskHtml = (  id, name, description, assignedTo, dueDate, status ) =
 // let html = createTaskHtml(1,'Requirments','workui', 'gary', '6/2/2022', 'InProgress',)
 //   console.log(html);
 //add tasks
-class TaskManager {
+    class TaskManager {
     constructor(currentId = 0){
         this.tasks = [];
-        this.currentId = currentId;       
+        this.currentId = currentId;      
+           
     }
 
 addTask(name, description, assignedTo, dueDate, status) {
@@ -47,12 +53,11 @@ addTask(name, description, assignedTo, dueDate, status) {
 }
 // const taskManager = new TaskManager(0);
 
-
 //current id
 getTaskById(taskId) {
     let foundTask;
 
-    for (let i=0 ; i<this.tasks.length ; i++) {
+    for (let i=0 ; i < this.tasks.length ; i++) {
         const task = this.tasks[i];
             if(task.id === taskId) {
                 foundTask = task;
@@ -61,12 +66,13 @@ getTaskById(taskId) {
 
     return foundTask;
 }
+
 //render method
 render(){
 
     let tasksHtmlList = [];
 
-    for(let i=0; i < this.tasks.length ; i++){
+    for(let i = 0 ; i < this.tasks.length ; i++){
 
        const task = this.tasks[i];
 
@@ -82,19 +88,24 @@ render(){
            );
         tasksHtmlList.push(taskHtml);
     }
+    // let tasksList = tasksHtmlList.join('\n');
+    // goToTasks.innerHTML = tasksList;
     const tasksHtml = tasksHtmlList.join("\n");
 
     const tasksList = document.querySelector("#task-list");
-    
-    tasksList.innerHTML = tasksHtml;
+    goToTasks.innerHTML = tasksHtml;
+//     tasksList.innerHTML = tasksHtml;
+// 
 }
+
 //save method
 save(){
-    const tasksJson = JSON.stringify(this.tasks);
+    let tasksJson = JSON.stringify(this.tasks);
     localStorage.setItem("tasks",tasksJson);
-    const currentId = String(this.currentId);
+    // const currentId = String(this.currentId);
+    let currentId = JSON.stringify(this.currentId);
     localStorage.setItem("currentId",currentId);
-}
+};
 
 
 //delete method
@@ -115,7 +126,7 @@ load(){
     // Check if any tasks are saved in localStorage
     if (localStorage.getItem("tasks")) {
        // Get the JSON string of tasks in localStorage
-       const tasksJson = localStorage.getItem("tasks");
+       let tasksJson = localStorage.getItem("tasks");
  
        // Convert it to an array and store it in our TaskManager
        this.tasks = JSON.parse(tasksJson);
@@ -126,7 +137,9 @@ load(){
        // Get the currentId string in localStorage
        const currentId = localStorage.getItem("currentId");
        // Convert the currentId to a number and store it in our TaskManager
-       this.currentId = Number(currentId);
+    //    this.currentId = Number(currentId);
+    currentId = Number(currentId);
+    this.currentId = JSON.parse(currentId);
      }
    }
 }

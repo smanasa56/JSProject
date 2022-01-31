@@ -1,7 +1,6 @@
-// const displayDate = document.querySelector("#display-date");
 
-// const todaydate = new Date();
-// document.getElementById("display-date").innerHTML = todaydate;
+
+
 
 //display the date object
 const dateElement = document.querySelector("#display-date");
@@ -11,40 +10,40 @@ let dateString = `Date: ${day} / ${month} / ${year}`;
 dateElement.innerHTML = dateString;
 
 
-const form = document.querySelector("#new-task-form");
+let validateName = document.querySelector("#inputname");
+let validateDescription = document.querySelector("#input-description");
+let validateAssignedTo = document.querySelector("#input-Assign");
+let validateDueDate = document.querySelector("#input-date");
+let validateStatus = document.querySelector("#status");
+let submitButton = document.querySelector('#submit-button');
+let goToTasks = document.querySelector('#task-list');
 
-form.addEventListener("submit", (event) => {
-  let validateName = document.querySelector("#inputname");
-  let validateDescription = document.querySelector("#input-description");
-  let validateAssignedTo = document.querySelector("#input-Assign");
-  let validateDueDate = document.querySelector("#input-date");
-  let validateStatus = document.querySelector("#input-choose");
-  let validationFail = 0;
+
+// const form = document.querySelector("#new-task-form");
+
+
+submitButton.addEventListener('click', (event) => {
+  // let validateName = document.querySelector("#inputname");
+  // let validateDescription = document.querySelector("#input-description");
+  // let validateAssignedTo = document.querySelector("#input-Assign");
+  // let validateDueDate = document.querySelector("#input-date");
+  // let validateStatus = document.querySelector("#input-choose");
+  // let validationFail = 0;
 
   event.preventDefault();
 
-  const clearFormFields = () => {
-    validateName.value = "";
-    validateDescription.value = "";
-    validateAssignedTo.value = "";
-    validateStatus.value = "In Progress";
-    validateDueDate.value = "";
-    validateName.classList.remove("is-valid");
-    validateDescription.classList.remove("is-valid");
-    validateAssignedTo.classList.remove("is-valid");
-    validateStatus.classList.remove("is-valid");
-    validateDueDate.classList.remove("is-valid");
-  };
-
-  // let todaysDate = new Date(Date.now())
-  //   .toLocaleString()
-  //   .split(",")[0]
-  //   .split("/");
-  // let day = todaysDate[1];
-  // let month = todaysDate[0];
-  // let year = todaysDate[2];
-  // taskDueDate is in yyyy-mm-dd format
-  // let taskDueDate = validateDueDate.value.split("-");
+  // const clearFormFields = () => {
+  //   validateName.value = "";
+  //   validateDescription.value = "";
+  //   validateAssignedTo.value = "";
+  //   validateStatus.value = "In Progress";
+  //   validateDueDate.value = "";
+  //   validateName.classList.remove("is-valid");
+  //   validateDescription.classList.remove("is-valid");
+  //   validateAssignedTo.classList.remove("is-valid");
+  //   validateStatus.classList.remove("is-valid");
+  //   validateDueDate.classList.remove("is-valid");
+  // };
 
 
   // console.log("Name :" + validateName.value.length);
@@ -86,44 +85,7 @@ form.addEventListener("submit", (event) => {
 //    Form validation for Due Date Field not empty
   
   // console.log(
-  //    `taskDueDate[2]:${taskDueDate[2]} day:${day} taskDueDate[1]:${taskDueDate[1]} month:${month} taskDueDate[0]:${taskDueDate[0]} year:${year}`
-  //   );
-    // (validateDueDate.value)
-
-  // if (taskDueDate[2] >= day &&
-  //   parseInt(taskDueDate[1]) >= month &&
-  //   parseIntask(DueDate[0]) >= year)
-  //    {
-  //   validateDueDate.classList.add("is-valid");
-  //   validateDueDate.classList.remove("is-invalid");
-  // } else {
-  //   validateDueDate.classList.add("is-invalid");
-  //   validateDueDate.classList.remove("is-valid");
-  //   validationFail++;
-  // }
-
-  // let dateCounter = 0;
-	// 	let addDateArray = validateDueDate.value.split('-');
-	// 	if (
-	// 		addDateArray[0] >= todaysDate[2] &&
-	// 		parseInt(addDateArray[1]) >= todaysDate[0] && 
-	// 		parseInt(addDateArray[2]) >= todaysDate[1] 
-	// 	) {
-	// 		dateCounter = 0;	
-	// 	}
-	// 	 else {
-	// 		dateCounter++
-	// 	}
-
-		
-		// if (!dateCounter) {
-		// 	validateDueDate.classList.add('is-valid');
-		// 	validateDueDate.classList.remove('is-invalid');
-		// } else {
-		// 	validateDueDate.classList.remove('is-valid');
-		// 	validateDueDate.classList.add('is-invalid');
-		// 	validationFail++;
-    // }
+  
       // Validate a correct date is entered
     const dateSplit = validateDueDate.value.split(/\D/);
     console.log(`dateSplit: ${dateSplit}`)
@@ -139,13 +101,13 @@ form.addEventListener("submit", (event) => {
       validateDueDate.classList.add('is-invalid');
       validateDueDate.classList.remove('is-valid');
          return false;
-     };
+     }
 
 
     
 
   // Form validation for Task Status Field not empty
-  if (validateStatus.value) {
+  if (validateStatus.value != '') {
     validateStatus.classList.add("is-valid");
     validateStatus.classList.remove("is-invalid");
   } else {
@@ -160,16 +122,22 @@ form.addEventListener("submit", (event) => {
   // 
   // let abc = addTask(manasa, DoingwithAthira, Pankaj, 5/6/2022, InProgress);
   // console.log(abc);
-  const taskManager = new TaskManager(0);
+  // const taskManager = new TaskManager(0);
 
-  taskManager.load();
-  taskManager.render();
+  // taskManager.load();
+  // taskManager.render();
+ 
 
-  if (validationFail > 0) {
-    validationFail = 0;
-    return;
-  } else {
+  // if (validationFail > 0) {
+  //   validationFail = 0;
+  //   return;
+  // } else {
+    const taskManager = new TaskManager(0);
+
+    // taskManager.load();
+    taskManager.render();
     
+
     taskManager.addTask(
       validateName.value,
       validateDescription.value,
@@ -177,14 +145,29 @@ form.addEventListener("submit", (event) => {
       validateDueDate.value,
       validateStatus.value
     );
-    clearFormFields();  
-    taskManager.save();
+
+    removeFields();  
+    // taskManager.save();
     taskManager.render();
-    }
-});
+  
+    function removeFields() {
+      validateName.value = '';
+      validateName.classList.remove('is-valid');
+      validateDescription.value = '';
+      validateDescription.classList.remove('is-valid');
+      validateAssignedTo.value = '';
+      validateAssignedTo.classList.remove('is-valid');
+      validateDueDate.value = '';
+      validateDueDate.classList.remove('is-valid');
+      validateStatus.value = '';
+      validateStatus.classList.remove('is-valid');
+  }
+    
+   
 //done display
-const taskList = document.querySelector("#task-list");
-taskList.addEventListener("click", (event) => { 
+// const taskList = document.querySelector("#task-list");
+// taskList.addEventListener("click", (event) => { 
+  goToTasks.addEventListener('click', (event) => {
   if(event.target.classList.contains("done-button")){
     event.preventDefault();
     const parentTask =
@@ -193,14 +176,14 @@ taskList.addEventListener("click", (event) => {
     let task = taskManager.getTaskById(taskId);
     // task.status = "Done";
     let doneButton = document.querySelector('#done-invisible');
-    if (task.status === 'In Progress' || task.status === 'Pending') {
-        task.status = 'Completed';
+    if (task.status === 'In Progress' || task.status === 'ToDo' || task.status === 'Review'){
+        task.status = 'Done';
     
     taskManager.save();
 
     taskManager.render(); 
-  } 
-  }
+    }; 
+  };
 
 
  // Check if a "Delete" button was clicked
@@ -221,5 +204,6 @@ taskList.addEventListener("click", (event) => {
 
   // Render the tasks
   taskManager.render();
-}
-});
+};
+})
+})
