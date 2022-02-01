@@ -1,7 +1,4 @@
 
-
-
-
 //display the date object
 const dateElement = document.querySelector("#display-date");
 let today = new Date();
@@ -60,7 +57,7 @@ submitButton.addEventListener('click', (event) => {
   } else {
     validateName.classList.add("is-invalid");
     validateName.classList.remove("is-valid");
-    validationFail++;
+    return false;
   }
 
   // Form validation for Task Description Field min length 5
@@ -70,7 +67,7 @@ submitButton.addEventListener('click', (event) => {
   } else {
     validateDescription.classList.add("is-invalid");
     validateDescription.classList.remove("is-valid");
-    validationFail++;
+    return false;
   }
 
 //   // Form validation for Task Assigned Field min length 5
@@ -80,7 +77,7 @@ submitButton.addEventListener('click', (event) => {
   } else {
     validateAssignedTo.classList.add("is-invalid");
     validateAssignedTo.classList.remove("is-valid");
-    validationFail++;
+    return false;
   }  
 //    Form validation for Due Date Field not empty
   
@@ -113,7 +110,7 @@ submitButton.addEventListener('click', (event) => {
   } else {
     validateStatus.classList.add("is-invalid");
     validateStatus.classList.remove("is-valid");
-    validationFail++;
+    return false;
   }
   //  If validation fails then function will not proceed further and
   // will return. The value of validationFail will also needed to be
@@ -124,19 +121,18 @@ submitButton.addEventListener('click', (event) => {
   // console.log(abc);
   // const taskManager = new TaskManager(0);
 
-  // taskManager.load();
+  
   // taskManager.render();
- 
+  const taskManager = new TaskManager();
+  
+    // taskManager.render();
 
   // if (validationFail > 0) {
   //   validationFail = 0;
   //   return;
   // } else {
-    const taskManager = new TaskManager(0);
-
-    // taskManager.load();
-    taskManager.render();
     
+      // taskManager.load();
 
     taskManager.addTask(
       validateName.value,
@@ -147,8 +143,11 @@ submitButton.addEventListener('click', (event) => {
     );
 
     removeFields();  
-    // taskManager.save();
+    taskManager.save();
+    taskManager.load();
     taskManager.render();
+    
+    
   
     function removeFields() {
       validateName.value = '';
@@ -162,7 +161,7 @@ submitButton.addEventListener('click', (event) => {
       validateStatus.value = '';
       validateStatus.classList.remove('is-valid');
   }
-    
+  
    
 //done display
 // const taskList = document.querySelector("#task-list");
@@ -180,7 +179,7 @@ submitButton.addEventListener('click', (event) => {
         task.status = 'Done';
     
     taskManager.save();
-
+    // taskManager.load();
     taskManager.render(); 
     }; 
   };
@@ -201,7 +200,7 @@ submitButton.addEventListener('click', (event) => {
 
   // Save the tasks to localStorage
   taskManager.save();
-
+  // taskManager.load();
   // Render the tasks
   taskManager.render();
 };

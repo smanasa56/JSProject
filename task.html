@@ -31,8 +31,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body> 
-    <div class="col text-right">
+<body class="disable-scroll"> 
+    <div id="middle">
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
             Add task
           </button>
@@ -116,13 +116,13 @@
     <br>
     <div class="row"  id="middle" >
       <div class="card-columns">
-    <div class="card bg-danger">
+    <div class="card bg-danger" >
       <div class="card-body text-center">
         <p class="card-text" >view your tasks list</p> 
       </div>
-      <div class="task-list-container">
+      <div class="task-list-container" >
         <h3 class="text-center">Tasks:</h3>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" >
           <ul class="list-group" id="task-list"></ul>
         </div>
       </div>
@@ -131,6 +131,7 @@
    
   </div>
   </div>
+ 
   </div>
   
   <br>
@@ -302,9 +303,10 @@
         <br>
         <br>
 
-    <div class="col text-right" style="font-size: 23px; color:crimson; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">“Concentrate on doing the best possible work you can in the time allotted for the task.”</div>
+    <div id="middle" style="font-size: 23px; color:crimson; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">“Concentrate on doing the best possible work you can in the time allotted for the task.”</div>
     <script src="js/index.js" defer></script>  
     <script src="js/taskManager.js" defer></script>
+   
 </body>
 </html>
 

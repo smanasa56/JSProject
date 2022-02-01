@@ -107,19 +107,6 @@ save(){
     localStorage.setItem("currentId",currentId);
 };
 
-
-//delete method
-deleteTask(taskId) {
-    const newTasks = [];
-    for (let i=0 ; i < this.tasks.length; i++) {
-        let task = this.tasks[i];
-        if (task.id !== taskId) {
-            newTasks.push(task);
-        }
-    }
-    this.tasks = newTasks;
-}
-
 //load method 
 
 load(){
@@ -137,9 +124,23 @@ load(){
        // Get the currentId string in localStorage
        const currentId = localStorage.getItem("currentId");
        // Convert the currentId to a number and store it in our TaskManager
-    //    this.currentId = Number(currentId);
-    currentId = Number(currentId);
-    this.currentId = JSON.parse(currentId);
+       this.currentId = Number(currentId);
+    // currentId = Number(currentId);
+    // this.currentId = JSON.parse(currentId);
      }
    }
+
+//delete method
+deleteTask(taskId) {
+    const newTasks = [];
+    for (let i=0 ; i < this.tasks.length; i++) {
+        let task = this.tasks[i];
+        if (task.id !== taskId) {
+            newTasks.push(task);
+        }
+    }
+    this.tasks = newTasks;
+}
+
+
 }
