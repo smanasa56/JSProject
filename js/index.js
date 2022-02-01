@@ -1,6 +1,6 @@
 const taskManager = new TaskManager();
 
-//display the date object
+// Display the date object
 const dateElement = document.querySelector("#display-date");
 let today = new Date();
 const [month, day, year] = [
@@ -20,30 +20,10 @@ let submitButton = document.querySelector("#submit-button");
 let goToTasks = document.querySelector("#task-list");
 const taskForm = document.querySelector("#task-form");
 
-// const form = document.querySelector("#new-task-form");
 
 submitButton.addEventListener("click", (event) => {
-  // let validateName = document.querySelector("#inputname");
-  // let validateDescription = document.querySelector("#input-description");
-  // let validateAssignedTo = document.querySelector("#input-Assign");
-  // let validateDueDate = document.querySelector("#input-date");
-  // let validateStatus = document.querySelector("#input-choose");
-  // let validationFail = 0;
-
+ 
   event.preventDefault();
-
-  // const clearFormFields = () => {
-  //   validateName.value = "";
-  //   validateDescription.value = "";
-  //   validateAssignedTo.value = "";
-  //   validateStatus.value = "In Progress";
-  //   validateDueDate.value = "";
-  //   validateName.classList.remove("is-valid");
-  //   validateDescription.classList.remove("is-valid");
-  //   validateAssignedTo.classList.remove("is-valid");
-  //   validateStatus.classList.remove("is-valid");
-  //   validateDueDate.classList.remove("is-valid");
-  // };
 
   // console.log("Name :" + validateName.value.length);
   // console.log("Description :" + validateDescription.value.length);
@@ -71,7 +51,7 @@ submitButton.addEventListener("click", (event) => {
     return false;
   }
 
-  //   // Form validation for Task Assigned Field min length 5
+  // Form validation for Task Assigned Field min length 5
   if (validateAssignedTo.value.length > 3) {
     validateAssignedTo.classList.add("is-valid");
     validateAssignedTo.classList.remove("is-invalid");
@@ -80,16 +60,15 @@ submitButton.addEventListener("click", (event) => {
     validateAssignedTo.classList.remove("is-valid");
     return false;
   }
-  //    Form validation for Due Date Field not empty
 
-  // console.log(
+  // Form validation for Due Date Field not empty
 
   // Validate a correct date is entered
   const dateSplit = validateDueDate.value.split(/\D/);
   console.log(`dateSplit: ${dateSplit}`);
   const dateValue = new Date(dateSplit[0], --dateSplit[1], ++dateSplit[2]);
   console.log(`dateValue: ${dateValue}`);
-  // get current date
+  // Get current date
   const dateNow = Date.now();
   console.log(`dateNow: ${dateNow}`);
   if (dateValue >= dateNow) {
@@ -110,26 +89,7 @@ submitButton.addEventListener("click", (event) => {
     validateStatus.classList.remove("is-valid");
     return false;
   }
-  //  If validation fails then function will not proceed further and
-  // will return. The value of validationFail will also needed to be
-  // reset to 0.
-  // ----------------------------------------------------------------------------------
-  //
-  // let abc = addTask(manasa, DoingwithAthira, Pankaj, 5/6/2022, InProgress);
-  // console.log(abc);
-  // const taskManager = new TaskManager(0);
-
-  // taskManager.render();
-
-  // taskManager.render();
-
-  // if (validationFail > 0) {
-  //   validationFail = 0;
-  //   return;
-  // } else {
-
-  // taskManager.load();
-
+  
   taskManager.addTask(
     validateName.value,
     validateDescription.value,
@@ -144,9 +104,6 @@ submitButton.addEventListener("click", (event) => {
   taskManager.load();
   taskManager.render();
 
-  //done display
-  // const taskList = document.querySelector("#task-list");
-  // taskList.addEventListener("click", (event) => {
   
 });
 
@@ -162,6 +119,8 @@ function removeFields() {
   validateStatus.value = "";
   validateStatus.classList.remove("is-valid");
 }
+
+// Done display
 
 goToTasks.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
@@ -180,7 +139,6 @@ goToTasks.addEventListener("click", (event) => {
       task.status = "Done";
 
       taskManager.save();
-      // taskManager.load();
       taskManager.render();
     }
   }
@@ -200,7 +158,6 @@ goToTasks.addEventListener("click", (event) => {
 
     // Save the tasks to localStorage
     taskManager.save();
-    // taskManager.load();
     // Render the tasks
     taskManager.render();
   }

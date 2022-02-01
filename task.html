@@ -35,82 +35,15 @@
     <div id="middle">
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
             Add task
-          </button>
-
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalUpcoming">
-        Upcoming
-      </button>
-
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalUpcoming" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Upcoming</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form  id="task-form" style="text-align: center;">
-                    <div class="form-group">
-                      <label for="input">Name:</label>
-                      <input type="text" class="form-control" id="input" >
-                    </div>
-                    <br>
-                    <div class="form-group" >
-                        <label for="inputdate">Start Date:</label>
-                        <input type="text" class="form-control" id="inputdate" >
-                      </div>
-                      <br>
-                      <div class="form-group" >
-                        <label for="inputdate">End Date:</label>
-                        <input type="text" class="form-control" id="inputdate" >
-                      </div>
-                      <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Description:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <br>
-                    <div class="form-group" >
-                        <label for="inputAsgn">AssignedTo:</label>
-                        <input type="text" class="form-control" id="inputAsgn" >
-                      </div>
-                      <br>
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">Status</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>ToDo</option>
-                        <option>In Progress </option>
-                        <option>Review</option>
-                        <option>Done</option>
-                      </select>
-                    </div>
-                    <br>
-                   <button type="reset" class="btn btn-secondary" >Reset</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </div>
-            <div class="modal-footer">
-              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-              <button type="button" class="btn btn-primary">Submit</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
+        </button>
     </div>
     <br>
     <div class="col-text-left">
       <strong><span id="display-date" style="margin-left: 30px;">Date</span></strong>  
       </div>
     <div id="container" >
-        
 
-    <!-- <div id="right">I want to be to the right</div> -->
-
-    <div id="middle" style="font-size: 50px;"><strong> Today's activities</strong> </div>
+    <div id="middle" style="font-size: 45px;"><strong> Today's Activities</strong> </div>
 
     <br>
     <br>
@@ -118,10 +51,10 @@
       <div class="card-columns">
     <div class="card bg-danger" >
       <div class="card-body text-center">
-        <p class="card-text" >view your tasks list</p> 
+        <p class="card-text" >View your Tasks List</p> 
       </div>
       <div class="task-list-container" >
-        <h3 class="text-center">Tasks:</h3>
+        <h3 class="text-center">Tasks</h3>
         <div class="d-flex justify-content-center" >
           <ul class="list-group" id="task-list"></ul>
         </div>
@@ -137,9 +70,8 @@
   <br>
   <div class="col text-right">
   
-         <!-- Button trigger modal -->
- 
-  
+  <!-- Button trigger modal -->
+   
   <!-- Modal -->
   <div class="modal fade" id="exampleMod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -203,17 +135,6 @@
                 </div>
                 
                 <br>
-                <!-- <div class="form-group">
-                  <label for="exampleFormControlSelect2">Example multiple select</label>
-                  <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-
-                </div> -->
                 <button type="reset" class="btn btn-secondary" >Reset</button>
             <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
               </form> 
@@ -228,13 +149,7 @@
         </div>
 
 
-        <!-- Button trigger modal -->
-
-        <!-- <div class="col text-right">
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModedit">
-    Edit task
-  </button> -->
- 
+  <!-- Button trigger modal --> 
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModedit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -278,18 +193,8 @@
                   </select>
                 </div>
                 <br>
-                <!-- <div class="form-group">
-                  <label for="exampleFormControlSelect2">Example multiple select</label>
-                  <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div> -->
                 <button type="reset" class="btn btn-secondary" >Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </form> 
         </div>
         <div class="modal-footer">
@@ -299,9 +204,9 @@
       </div>
     </div>
   </div>
-        </div>
-        <br>
-        <br>
+  </div>
+  <br>
+  <br>
 
     <div id="middle" style="font-size: 23px; color:crimson; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">“Concentrate on doing the best possible work you can in the time allotted for the task.”</div>
 

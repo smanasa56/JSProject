@@ -29,8 +29,10 @@ const createTaskHtml = (  id, name, description, assignedTo, dueDate, status ) =
 };
 
 // let html = createTaskHtml(1,'Requirments','workui', 'gary', '6/2/2022', 'InProgress',)
-//   console.log(html);
-//add tasks
+// console.log(html);
+
+// Adding Tasks //
+
     class TaskManager {
     constructor(currentId = 0){
         this.tasks = [];
@@ -51,9 +53,9 @@ addTask(name, description, assignedTo, dueDate, status) {
     this.tasks.push(task);
     
 }
-// const taskManager = new TaskManager(0);
 
-//current id
+// Current ID //
+
 getTaskById(taskId) {
     let foundTask;
 
@@ -67,7 +69,8 @@ getTaskById(taskId) {
     return foundTask;
 }
 
-//render method
+// Render method //
+
 render(){
 
     let tasksHtmlList = [];
@@ -88,17 +91,16 @@ render(){
            );
         tasksHtmlList.push(taskHtml);
     }
-    // let tasksList = tasksHtmlList.join('\n');
-    // goToTasks.innerHTML = tasksList;
+  
     const tasksHtml = tasksHtmlList.join("\n");
 
     const tasksList = document.querySelector("#task-list");
     goToTasks.innerHTML = tasksHtml;
-//     tasksList.innerHTML = tasksHtml;
-// 
+
 }
 
-//save method
+// Save method //
+
 save(){
     let tasksJson = JSON.stringify(this.tasks);
     localStorage.setItem("tasks",tasksJson);
@@ -107,7 +109,7 @@ save(){
     localStorage.setItem("currentId",currentId);
 };
 
-//load method 
+// Load method // 
 
 load(){
     // Check if any tasks are saved in localStorage
@@ -125,12 +127,11 @@ load(){
        const currentId = localStorage.getItem("currentId");
        // Convert the currentId to a number and store it in our TaskManager
        this.currentId = Number(currentId);
-    // currentId = Number(currentId);
-    // this.currentId = JSON.parse(currentId);
      }
    }
 
-//delete method
+// Delete method //
+
 deleteTask(taskId) {
     const newTasks = [];
     for (let i=0 ; i < this.tasks.length; i++) {
@@ -141,6 +142,4 @@ deleteTask(taskId) {
     }
     this.tasks = newTasks;
 }
-
-
 }
