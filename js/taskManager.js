@@ -95,6 +95,7 @@ render(){
     const tasksHtml = tasksHtmlList.join("\n");
 
     const tasksList = document.querySelector("#task-list");
+    let goToTasks = document.querySelector("#task-list") // added
     goToTasks.innerHTML = tasksHtml;
 
 }

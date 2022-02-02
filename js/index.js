@@ -1,4 +1,6 @@
 const taskManager = new TaskManager();
+taskManager.load(); 
+taskManager.render(); 
 
 // Display the date object
 const dateElement = document.querySelector("#display-date");
@@ -101,7 +103,7 @@ submitButton.addEventListener("click", (event) => {
   // taskForm.reset()
   removeFields();
   taskManager.save();
-  taskManager.load();
+  // taskManager.load(); 
   taskManager.render();
 
   

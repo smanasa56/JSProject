@@ -32,18 +32,30 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body class="disable-scroll"> 
-    <div id="middle">
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
-            Add task
-        </button>
+    <div id="middle" style="font-size: 35px;"><strong>Welcome to the To-Do List App</strong><br>
+          
+      <div class="col-text-left" style="font-size: 15px;">
+        <strong><span id="display-date" style="margin-left: -470px;">Date</span></strong>  
+        </div>
+
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
+            Add your task here
+        </button> 
+        </div>
     </div>
     <br>
-    <div class="col-text-left">
+    <!-- <div class="col-text-left">
       <strong><span id="display-date" style="margin-left: 30px;">Date</span></strong>  
-      </div>
+      </div> -->
     <div id="container" >
 
-    <div id="middle" style="font-size: 45px;"><strong> Today's Activities</strong> </div>
+    <!-- <div id="middle" style="font-size: 45px;"><strong> To-Do List</strong> </div> -->
+    
+    <!-- Added button here-->
+    <!-- <div id="middle">
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleMod">
+          Add task
+      </button> -->
 
     <br>
     <br>
@@ -51,10 +63,10 @@
       <div class="card-columns">
     <div class="card bg-danger" >
       <div class="card-body text-center">
-        <p class="card-text" >View your Tasks List</p> 
+        <p class="card-text" ><strong>Current Tasks List</strong></p> 
       </div>
       <div class="task-list-container" >
-        <h3 class="text-center">Tasks</h3>
+        <!-- <h3 class="text-center">Tasks</h3> -->
         <div class="d-flex justify-content-center" >
           <ul class="list-group" id="task-list"></ul>
         </div>
