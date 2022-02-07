@@ -131,7 +131,6 @@ goToTasks.addEventListener("click", (event) => {
       event.target.parentElement.parentElement.parentElement.parentElement;
     let taskId = Number(parentTask.dataset.taskId);
     let task = taskManager.getTaskById(taskId);
-    // task.status = "Done";
     let doneButton = document.querySelector("#done-invisible");
     if (
       task.status === "In Progress" ||

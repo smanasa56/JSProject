@@ -2,7 +2,6 @@
     position: relative;
     width: 150%;
 }
-
 #middle {
     margin-left: 500px;
     /* margin:0 auto; */
@@ -11,15 +10,40 @@
     max-width:600px;
     /* height:300px; */
 }
-
-/* #right {
-    max-width:250px;
-    width:100%;
-} */
-/* #display-date{
-    margin-right: 614px;
-    text-align: left;
-} */
-.disable-scroll{
-    overflow-x: hidden;
+.form-group {
+    background-color: rgb(229, 147, 147) ;
+    border: none;
+    color: rgb(14, 13, 13);
+}
+  .task-box {
+    background-color: #333;
+    overflow: hidden;
   }
+  .task-status-todo {
+    box-shadow: 5px 5px 0px 0px hsl(300, 11%, 93%), 15px 15px 0px 0px #F0E3F0;
+    background-color: #94D6E7;
+  }
+  .task-status-inprogress {
+    box-shadow: 5px 5px 0px 0px #D6D6AB, 15px 15px 0px 0px #EEEEBE;
+    background-color: #F3F3B5;
+  }
+  .task-status-review {
+    box-shadow: 5px 5px 0px 0px #ADB9C2, 15px 15px 0px 0px #CCDAE4;
+    background-color: #CCDAE4;
+  }
+  .task-status-done {
+    box-shadow: 5px 5px 0px 0px #B2D0B2, 15px 15px 0px 0px #D1F5D1;
+    background-color: #81E981;
+  }
+  #task-list > li {
+    margin-top: 2.3rem;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(243, 148, 148);
+    color: white;
+    text-align: center;
+ }

@@ -1,32 +1,40 @@
 const createTaskHtml = (  id, name, description, assignedTo, dueDate, status ) => {
-    const html =   
-    `<li id="individual-card" class="card" data-task-id="${id}" style="min-width: 50vw">
-        <div class="card-body">
-            <h5 class="card-title">Name: ${name}</h5>
-            <p class="card-text">
-                Task Description: ${description}
-            </p>
-            <p class="card-text">Assigned To: ${assignedTo}</p>
-            <p class="card-text">Due Date: ${dueDate}</p>
-            <p class="card-text"><b>Task status: ${status}</b></p>
-            <div class="card-footer row mt-4">
-                <div class="col-6 justify-content-center">
-                    <button id="done-invisible" class="${String(status).toLowerCase()===('done') ? 'invisible' : ''} btn btn-outline-success done-button">
-                        Done
-                    </button>
-                </div>
-                <div class="col-6 justify-content-center">
-                    <button class="btn btn-outline-danger delete-button">
-                        Delete
-                    </button>
-                </div>
-            </div>
-        </div>
-    </li>
-    `;
-          return html;
-          
-};
+    let cssClass = status.toLowerCase().replace(" ", "");
+    const html = `<li class= "col col-12 col-md-4" data-task-id="${id}">
+              <div class="col border border-secondary pb-2 task-status-${cssClass}">
+              <div class=""><strong>Task Name:</strong></div>
+                <div class="">${name}</div>
+              <div class="mb-1">
+                <div class=""><strong>Task Description:</strong></div>
+                <div class="">${description}</div>
+              </div>          
+              <div class="">
+                <div class=""><strong>Assigned To:</strong> </div>
+                <div class="">${assignedTo}</div>
+              </div>
+              <div class="">
+                 <div class=""><strong>Due Date:</strong></div>
+                 <div class="">${dueDate}</div>
+              </div>          
+              <div class="">
+                 <div class=""><strong>Task status:</strong></div>
+                 <div class="">${status}</div>
+              </div>          
+              <div class="card-footer row mt-4">
+              <div class="col-6 justify-content-center">
+                  <button id="done-invisible" class="${String(status).toLowerCase()===('done') ? 'invisible' : ''} btn btn-outline-success done-button">
+                  Done
+                  </button>
+              </div>
+              <div class="col-6 justify-content-center">
+                  <button class="btn btn-outline-danger delete-button">
+                  Delete
+                  </button>
+              </div>
+          </div>
+            </li>`;
+    return html;
+  };
 
 // let html = createTaskHtml(1,'Requirments','workui', 'gary', '6/2/2022', 'InProgress',)
 // console.log(html);
