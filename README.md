@@ -2,7 +2,7 @@
 
 # To-Do List App
 
-This is a user friendly interactive task manager website.
+This is an interactive task manager website.
 
 Used HTML5, CSS3, Bootstrap, JavaScript
 
